@@ -1,0 +1,40 @@
+#ABNF 1.0 UTF-8 cs;
+grammar fractions;
+root $fractions;
+
+public $fractions = ($MEANING_fifth | $MEANING_tenth | $MEANING_half | $MEANING_quarter | $MEANING_third | $MEANING_whole);
+
+$MEANING_fifth = ( ( $WORD_pětina | $WORD_pětinový ) {MEANING_fifth} );
+$MEANING_tenth = ( ( $WORD_desetinka | $WORD_desetinový | $WORD_desítina | $WORD_desetina ) {MEANING_tenth} );
+$MEANING_half = ( ( $WORD_půlka | $WORD_polovička | $WORD_půl | $WORD_polovina | $WORD_zpola | $WORD_půle | $WORD_z_poloviny | $WORD_polovice | $WORD_napůl ) {MEANING_half} );
+$MEANING_quarter = ( ( $WORD_čtvrt | $WORD_čtvrtka | $WORD_čtvrtina ) {MEANING_quarter} );
+$MEANING_third = ( ( $WORD_třetina | $WORD_třetinový | $WORD_třetinka ) {MEANING_third} );
+$MEANING_whole = ( ( $WORD_veškerý | $WORD_celičký | $WORD_kompletní | $WORD_všechen | $WORD_celý | $WORD_úplný ) {MEANING_whole} );
+
+$WORD_napůl = ( ( napůl ) {WORD_napůl} );
+$WORD_třetina = ( ( třetinách | třetinami | třetino | třetina | třetinou | třetin | třetině | třetinu | třetinám | třetiny ) {WORD_třetina} );
+$WORD_desetinový = ( ( desetinový ) {WORD_desetinový} );
+$WORD_půlka = ( ( půlko | půlku | půlkami | půlka | půlkách | půlek | půlky | půlkám | půlce | půlkou ) {WORD_půlka} );
+$WORD_desetina = ( ( desetinách | desetiny | desetin | desetinám | desetino | desetinou | desetina | desetině | desetinu | desetinami ) {WORD_desetina} );
+$WORD_z_poloviny = ( ( z poloviny ) {WORD_z_poloviny} );
+$WORD_polovice = ( ( polovice ) {WORD_polovice} );
+$WORD_úplný = ( ( úplný | úplnými | úplnou | nejúplnější | úplné | úplná | úplného | úplném | úplných | úplní | úplným | úplnější | úplnému ) {WORD_úplný} );
+$WORD_půle = ( ( půlích | půlemi | půle | půlí | půli | půlím ) {WORD_půle} );
+$WORD_třetinový = ( ( třetinový ) {WORD_třetinový} );
+$WORD_všechen = ( ( všech | všechnu | vším | vší | všechno | všechny | všem | všeho | všemu | všechna | všemi | všechen | všichni ) {WORD_všechen} );
+$WORD_veškerý = ( ( veškerý | veškeré | veškerých | veškerého | veškerým | veškerém | veškerými | veškerému | — | veškerá | veškeří | veškerou ) {WORD_veškerý} );
+$WORD_pětinový = ( ( pětinový ) {WORD_pětinový} );
+$WORD_čtvrtina = ( ( čtvrtin | čtvrtinám | čtvrtino | čtvrtina | čtvrtinami | čtvrtiny | čtvrtinu | čtvrtinách | čtvrtinou | čtvrtině ) {WORD_čtvrtina} );
+$WORD_třetinka = ( ( třetinka ) {WORD_třetinka} );
+$WORD_desítina = ( ( desítina | desítinu | desítin | desítině | desítiny | desítinám | desítinami | desítinách | desítinou | desítino ) {WORD_desítina} );
+$WORD_polovina = ( ( polovinám | polovino | polovinami | polovinu | polovině | polovin | polovinách | polovinou | polovina | poloviny ) {WORD_polovina} );
+$WORD_kompletní = ( ( kompletnější | nejkompletnější | kompletní | kompletního | kompletních | kompletnímu | kompletním | kompletními ) {WORD_kompletní} );
+$WORD_desetinka = ( ( desetinka ) {WORD_desetinka} );
+$WORD_celičký = ( ( celičká | celičkým | celičkí | celičkému | celičké | celičkého | celičkými | celičkou | celičkém | celičký | celičkých ) {WORD_celičký} );
+$WORD_půl = ( ( půl ) {WORD_půl} );
+$WORD_zpola = ( ( zpola ) {WORD_zpola} );
+$WORD_polovička = ( ( polovička ) {WORD_polovička} );
+$WORD_čtvrt = ( ( čtvrt | čtvrtě | čtvrtí | čtvrti | čtvrtím | čtvrtích | čtvrtěmi ) {WORD_čtvrt} );
+$WORD_čtvrtka = ( ( čtvrtkou | čtvrtkami | čtvrtka | čtvrtky | čtvrtce | čtvrtkách | čtvrtku | čtvrtkám | čtvrtko | čtvrtek ) {WORD_čtvrtka} );
+$WORD_celý = ( ( celý | celá | celí | celého | celé | celým | celém | celými | celému | celejší | nejcelejší | celých | celou ) {WORD_celý} );
+$WORD_pětina = ( ( pětin | pětinami | pětinou | pětino | pětinu | pětiny | pětinám | pětina | pětině | pětinách ) {WORD_pětina} );

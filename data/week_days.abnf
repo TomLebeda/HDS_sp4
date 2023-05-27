@@ -1,0 +1,23 @@
+$MEANING_saturday = ( ( $WORD_sobota | $WORD_sobotní ) {MEANING_saturday} );
+$MEANING_sunday = ( ( $WORD_neděle | $WORD_nedělní ) {MEANING_sunday} );
+$MEANING_monday = ( ( $WORD_pondělí | $WORD_pondělní | $WORD_pondělek ) {MEANING_monday} );
+$MEANING_tuesday = ( ( $WORD_úterý | $WORD_úterní ) {MEANING_tuesday} );
+$MEANING_wednesday = ( ( $WORD_středa | $WORD_středeční ) {MEANING_wednesday} );
+$MEANING_thursday = ( ( $WORD_čtvrtek | $WORD_čtvrteční ) {MEANING_thursday} );
+$MEANING_friday = ( ( $WORD_pátek | $WORD_páteční ) {MEANING_friday} );
+
+$WORD_pondělek = ( ( pondělku | pondělka | pondělků | pondělkům | pondělcích | pondělkem | pondělek | pondělky ) {WORD_pondělek} );
+$WORD_sobota = ( ( sobotami | sobota | sobot | soboto | soboty | sobotě | sobotou | sobotám | sobotu | sobotách ) {WORD_sobota} );
+$WORD_sobotní = ( ( sobotnímu | sobotním | sobotními | sobotní | sobotního | sobotních ) {WORD_sobotní} );
+$WORD_pondělí = ( ( pondělích | pondělími | pondělí | pondělím ) {WORD_pondělí} );
+$WORD_pondělní = ( ( pondělních | pondělnímu | pondělním | pondělními | pondělní | pondělního ) {WORD_pondělní} );
+$WORD_nedělní = ( ( nedělních | nedělnímu | nedělním | nedělními | nedělní | nedělního ) {WORD_nedělní} );
+$WORD_středa = ( ( středa | středou | středám | středy | střed | středo | středami | středách | středě | středu ) {WORD_středa} );
+$WORD_čtvrtek = ( ( čtvrtků | čtvrtku | čtvrtkům | čtvrtcích | čtvrtkem | čtvrtek | čtvrtky | čtvrtka ) {WORD_čtvrtek} );
+$WORD_středeční = ( ( středečnímu | středečním | středečními | středeční | středečního | středečních ) {WORD_středeční} );
+$WORD_čtvrteční = ( ( čtvrtečnímu | čtvrtečním | čtvrtečními | čtvrteční | čtvrtečního | čtvrtečních ) {WORD_čtvrteční} );
+$WORD_neděle = ( ( neděle | neděl | nedělí | neděli | nedělím | nedělích | nedělemi ) {WORD_neděle} );
+$WORD_úterý = ( ( úterý | úterým | úterých | úterými ) {WORD_úterý} );
+$WORD_úterní = ( ( úternímu | úterním | úterními | úterní | úterního | úterních ) {WORD_úterní} );
+$WORD_pátek = ( ( pátcích | pátkem | pátek | pátky | pátku | pátků | pátkům ) {WORD_pátek} );
+$WORD_páteční = ( ( pátečním | pátečními | páteční | pátečního | pátečních | pátečnímu ) {WORD_páteční} );

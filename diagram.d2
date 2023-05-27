@@ -1,0 +1,11 @@
+LOOP -> check state
+check state -> greetings : init
+check state -> wait for speech : idle
+check state -> say timeout help : timeout
+check state -> process : SLU
+process -> "state := quit" : quit
+process -> "state := help" : help
+process -> "state := question" : question
+say timeout help -> "state := idle"
+wait for speech -> "state := timeout" : timeout
+greetings -> "state := idle"

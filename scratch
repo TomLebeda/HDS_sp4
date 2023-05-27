@@ -1,0 +1,52 @@
+Položky v csv:
+1. ID
+2. celková kapacita
+3. obsazená místa bez rezervace lístkem
+4. obsazená místa bez rezervace kartou
+5. obsazená místa s rezervací kartou
+6. volná místa bez rezervace
+7. volná místa s rezervací
+8. datum aktualizace
+
+Otázky:
+Jaká je kapacita [parkoviště]? -> int
+Kolik je [stav místa] míst v [čas] v [parkoviště]? -> int
+Jsou volná místa v [čas] v [parkoviště]? -> bool
+Je v [čas] alespoň [int] [stav místa] míst v [parkoviště]? -> bool
+Kde je v [čas] více [stav místa] -> enum:parkoviště
+
+[parkoviště]
+	1. Rychtářka
+	2. Nové Divadlo
+[stav místa]
+	1. volno
+	2. obsazeno
+[čas]
+	1. nyní
+	2. hh:mm
+
+Otázky EXPANDED:
+
+STAV: 
+čas (nyní / hh:mm) [default = nyní]
+místo (R/ND) [default = zeptat se]
+volno/obsazeno [default = volno]
+otázka (kolik? jestli? kde? kapacita?) [default = zeptat se]
+
+
+17:30	-> sedmnáct třicet				-> ( $N $N )
+17:30	-> sedmnáct hodin třicet minut	-> ( $N hodin $N minut )
+17:00	-> sedmnáct						-> ( $N )
+17:00	-> sedmnáct nula nula			-> ( $N nula nula )
+02:00	-> ve dvě hodiny				-> ( (v | ve) $N $W_hour )
+02:00 ve dvě -> ( (v | ve) $N )
+02:30 v půl třetí
++01:00 za hodinu
++03:00 za tři hodiny
+-01:00 před hodinou
+-04:00 před čtyřma hodinama
++02:30 za dvě a půl hodiny
++02:40 za dvě hodiny a 40 minut
++00:30 za třicet minut
+-02:00 před dvěma hodinama 
+-01:00 před hodinou a půl

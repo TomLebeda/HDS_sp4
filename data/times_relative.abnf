@@ -1,0 +1,19 @@
+$MEANING_yesterday = ( ( $WORD_včera ) {MEANING_yesterday} );
+$MEANING_the_day_after_tomorrow = ( ( $WORD_pozítří ) {MEANING_the_day_after_tomorrow} );
+$MEANING_today = ( ( $WORD_dneska | $WORD_dnes ) {MEANING_today} );
+$MEANING_now = ( ( $WORD_současně | $WORD_nyní | $WORD_právě | $WORD_teď | $WORD_zrovna | $WORD_aktuálně | $WORD_teďko ) {MEANING_now} );
+$MEANING_tomorrow = ( ( $WORD_zítra | $WORD_zejtra ) {MEANING_tomorrow} );
+
+$WORD_aktuálně = ( ( nejaktuálněji | aktuálně | aktuálněji ) {WORD_aktuálně} );
+$WORD_teďko = ( ( teďko ) {WORD_teďko} );
+$WORD_dnes = ( ( dnes ) {WORD_dnes} );
+$WORD_dneska = ( ( dneska ) {WORD_dneska} );
+$WORD_nyní = ( ( nyní ) {WORD_nyní} );
+$WORD_právě = ( ( právě ) {WORD_právě} );
+$WORD_teď = ( ( teď ) {WORD_teď} );
+$WORD_zejtra = ( ( zejtra ) {WORD_zejtra} );
+$WORD_včera = ( ( včera ) {WORD_včera} );
+$WORD_pozítří = ( ( pozítří ) {WORD_pozítří} );
+$WORD_současně = ( ( nejsoučasněji | současně | současněji ) {WORD_současně} );
+$WORD_zrovna = ( ( zrovna ) {WORD_zrovna} );
+$WORD_zítra = ( ( zítra ) {WORD_zítra} );
