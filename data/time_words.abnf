@@ -1,5 +1,5 @@
 #ABNF 1.0 UTF-8 cs;
-grammar time_words;
+grammar timewords;
 root $timewords;
 
 public $timewords = ($MEANING_hour | $MEANING_minute);
@@ -11,5 +11,3 @@ $WORD_hodina = ( ( hodinou | hodino | hodinami | hodině | hodin | hodinách | h
 $WORD_hodinka = ( ( hodinkou | hodinkami | hodinky | hodinek | hodince | hodinku | hodinkách | hodinko | hodinkám | hodinka ) {WORD_hodinka} );
 $WORD_minuta = ( ( minuto | minutách | minuty | minutě | minutou | minut | minutu | minutami | minutám | minuta ) {WORD_minuta} );
 $WORD_minutka = ( ( minutky | minutkách | minutce | minutkám | minutek | minutku | minutkou | minutka | minutko | minutkami ) {WORD_minutka} );
-
-So if you ever meet someone who uses Vim, just nod and smile, because you might not understand their quirks, but they are probably writing code faster than you can speak. 

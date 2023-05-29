@@ -1,3 +1,7 @@
 sync
 .vimproject
 src/__pycache__
+novedivadlo-actual.csv
+novedivadlo-full.csv
+rychtarka-full.csv
+rychtarka-actual.csv

@@ -1,0 +1,41 @@
+#ABNF 1.0 UTF-8 cs;
+grammar other;
+root $other;
+
+public $other = (
+$MEANING_spot_state | 
+$MEANING_nove_divadlo | 
+$MEANING_rychtarka
+);
+
+$MEANING_spot_state = (
+	$MEANING_available {AVAILABLE} | 
+	$MEANING_not_available {NOT_AVAILABLE}
+);
+
+$MEANING_nove_divadlo = ((
+	nové divadlo |
+	nového divadla |
+	novému divadlu |
+	novém divadlu |
+	novém divadle |
+	novým divadlem
+) {Nové Divadlo});
+
+$MEANING_rychtarka = ((
+	rychtářka | 
+	rychtářky | 
+	rychtářce | 
+	rychtářkou
+) {Rychtářka} );
+
+$MEANING_available = ( ( $WORD_dostupný | $WORD_prázdný | $WORD_volný )  );
+$MEANING_not_available = ( ( $WORD_obsazený | $WORD_plný | $WORD_zabraný )  );
+
+$WORD_obsazený = ( ( obsazenou | obsazeného | obsazenému | obsazenými | obsazené | obsazená | obsazených | obsazený | obsazení | obsazeným | obsazeném )  );
+$WORD_plný = ( ( plnou | plnější | plni | plna | plnému | plnu | plný | plny | plnými | plní | plném | plného | plná | plným | plných | plno | nejplnější | pln | plné )  );
+$WORD_zabraný = ( ( zabraný )  );
+$WORD_prázdný = ( ( prázdných | prázdné | prázdném | nejprázdnější | prázdného | prázdní | prázdná | prázdným | prázdný | prázdnou | prázdnější | prázdnému | prázdnými )  );
+$WORD_volný = ( ( volných | volného | volným | nejvolnější | volném | volný | volní | volnější | volnou | volnými | volná | volné | volnému )  );
+$WORD_dostupný = ( ( dostupná | dostupní | dostupnými | dostupných | dostupnému | dostupnou | dostupném | dostupného | dostupnější | dostupný | dostupným | nejdostupnější | dostupné )  );
+

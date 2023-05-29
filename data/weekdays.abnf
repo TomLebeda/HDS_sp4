@@ -1,0 +1,37 @@
+#ABNF 1.0 UTF-8 cs;
+grammar weekdays;
+root $weekdays;
+
+public $weekdays = (
+	$MEANING_monday {MONDAY} | 
+	$MEANING_tuesday {TUESDAY} |
+	$MEANING_wednesday {WEDNESDAY} |
+	$MEANING_thursday {THURSDAY} |
+	$MEANING_friday {FRIDAY} |
+	$MEANING_saturday {SATURDAY} |
+	$MEANING_sunday {SUNDAY}
+);
+
+$MEANING_saturday = ( $WORD_sobota | $WORD_sobotní);
+$MEANING_sunday = (  $WORD_neděle | $WORD_nedělní);
+$MEANING_monday = (  $WORD_pondělí | $WORD_pondělní | $WORD_pondělek);
+$MEANING_tuesday = (  $WORD_úterý | $WORD_úterní);
+$MEANING_wednesday = (  $WORD_středa | $WORD_středeční);
+$MEANING_thursday = (  $WORD_čtvrtek | $WORD_čtvrteční);
+$MEANING_friday = ( $WORD_pátek | $WORD_páteční);
+
+$WORD_pondělek = ( pondělku | pondělka | pondělků | pondělkům | pondělcích | pondělkem | pondělek | pondělky  );
+$WORD_sobota = ( sobotami | sobota | sobot | soboto | soboty | sobotě | sobotou | sobotám | sobotu | sobotách  );
+$WORD_sobotní = ( sobotnímu | sobotním | sobotními | sobotní | sobotního | sobotních  );
+$WORD_pondělí = ( pondělích | pondělími | pondělí | pondělím  );
+$WORD_pondělní = ( pondělních | pondělnímu | pondělním | pondělními | pondělní | pondělního  );
+$WORD_nedělní = ( nedělních | nedělnímu | nedělním | nedělními | nedělní | nedělního  );
+$WORD_středa = ( středa | středou | středám | středy | střed | středo | středami | středách | středě | středu  );
+$WORD_čtvrtek = ( čtvrtků | čtvrtku | čtvrtkům | čtvrtcích | čtvrtkem | čtvrtek | čtvrtky | čtvrtka  );
+$WORD_středeční = ( středečnímu | středečním | středečními | středeční | středečního | středečních  );
+$WORD_čtvrteční = ( čtvrtečnímu | čtvrtečním | čtvrtečními | čtvrteční | čtvrtečního | čtvrtečních  );
+$WORD_neděle = ( neděle | neděl | nedělí | neděli | nedělím | nedělích | nedělemi  );
+$WORD_úterý = ( úterý | úterým | úterých | úterými  );
+$WORD_úterní = ( úternímu | úterním | úterními | úterní | úterního | úterních  );
+$WORD_pátek = ( pátcích | pátkem | pátek | pátky | pátku | pátků | pátkům  );
+$WORD_páteční = ( pátečním | pátečními | páteční | pátečního | pátečních | pátečnímu  );

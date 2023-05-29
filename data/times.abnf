@@ -1,0 +1,189 @@
+#ABNF 1.0 UTF-8 cs;
+grammar times;
+root $times;
+
+public $times = (
+	($num $hod $num $min) |
+	($num {hod} $num {min}) |
+	($num {hod} ($n0 $n0) {0:min}) |
+	((v|ve) $num $hod) {0:min} |
+	((v|ve) $num {hod:0:min}) |
+	(půl (jedné | jedný ) {0:hod:30:min}) |
+	(půl (druhé | druhý ) {1:hod:30:min}) |
+	(půl třetí {2:hod:30:min}) |
+	(půl třetí {2:hod:30:min}) |
+	(půl (čtvrté | čtvrtý ) {3:hod:30:min}) |
+	(půl (páté | pátý ) {4:hod:30:min}) |
+	(půl (šesté | šestý ) {5:hod:30:min}) |
+	(půl (sedmé | sedmý ) {6:hod:30:min}) |
+	(půl (osmé | osmý ) {7:hod:30:min}) |
+	(půl (deváté | devátý ) {8:hod:30:min}) |
+	(půl (desáté | desátý ) {9:hod:30:min}) |
+	(půl (jedenácté | jedenáctý ) {10:hod:30:min}) |
+	(půl (dvanácté | dvanáctý ) {11:hod:30:min}) |
+	(čtvrt na jednu {0:hod:15:min}) |
+	(čtvrt na dvě {1:hod:15:min}) |
+	(čtvrt na tři {2:hod:15:min}) |
+	(čtvrt na čtyři {3:hod:15:min}) |
+	(čtvrt na pět {4:hod:15:min}) |
+	(čtvrt na šest {5:hod:15:min}) |
+	(čtvrt na (sedm | sedum) {6:hod:15:min}) |
+	(čtvrt na (osm | osum) {7:hod:15:min}) |
+	(čtvrt na devět {8:hod:15:min}) |
+	(čtvrt na deset {9:hod:15:min}) |
+	(čtvrt na jedenáct {10:hod:15:min}) |
+	(čtvrt na dvanáct {10:hod:15:min}) |
+	(tři čtvrtě na jednu {0:hod:45:min}) |
+	(tři čtvrtě na dvě {1:hod:45:min}) |
+	(tři čtvrtě na tři {2:hod:45:min}) |
+	(tři čtvrtě na čtyři {3:hod:45:min}) |
+	(tři čtvrtě na pět {4:hod:45:min}) |
+	(tři čtvrtě na šest {5:hod:45:min}) |
+	(tři čtvrtě na (sedm | sedum) {6:hod:45:min}) |
+	(tři čtvrtě na (osm | osum) {7:hod:45:min}) |
+	(tři čtvrtě na devět {8:hod:45:min}) |
+	(tři čtvrtě na deset {9:hod:45:min}) |
+	(tři čtvrtě na jedenáct {10:hod:45:min}) |
+	(tři čtvrtě na dvanáct {10:hod:45:min}) |
+	(za hodinu {add:1:hod:0:min}) |
+	(za {add} $num $hod {0:min}) |
+	(před {subtract} hodinou {1:hod:0:min}) |
+	(před {subtract} $num $hod {0:min}) |
+	(za čtvrt hodiny {add:0:hod:15:min}) |
+	(za půl hodiny {add:0:hod:30:min}) |
+	(za tři čtvrtě hodiny {add:0:hod:45:min}) |
+	(za hodinu a půl {add:1:hod:30:min}) |
+	(za dvě a půl hodiny {add:2:hod:30:min}) |
+	(za tři a půl hodiny {add:3:hod:30:min}) |
+	(za čtyři a půl hodiny {add:4:hod:30:min}) |
+	(za hodinu a čtvrt {add:1:hod:15:min}) |
+	(za dvě a čtvrt hodiny {add:2:hod:15:min}) |
+	(za tři a čtvrt hodiny {add:3:hod:15:min}) |
+	(za čtyři a čtvrt hodiny {add:4:hod:15:min}) |
+	(za hodinu a tři čtvrtě {add:1:hod:45:min}) |
+	(za dvě a tři čtvrtě hodiny {add:2:hod:45:min}) |
+	(za tři a tři čtvrtě hodiny {add:3:hod:45:min}) |
+	(za čtyři a tři čtvrtě hodiny {add:4:hod:45:min}) |
+	(před čtvrt hodinou {subtract:0:hod:15:min}) |
+	(před půl hodinou {subtract:0:hod:30:min}) |
+	(před tři čtvrtě hodinou {subtract:0:hod:45:min}) |
+	(před hodinou a půl {subtract:1:hod:30:min}) |
+	(před dvě a půl (hodinami | hodinama) {subtract:2:hod:30:min}) |
+	(před tři a půl (hodinami | hodinama) {subtract:3:hod:30:min}) |
+	(před čtyři a půl (hodinami | hodinama) {subtract:4:hod:30:min}) |
+	(před hodinu a čtvrt {subtract:1:hod:15:min}) |
+	(před dvě a čtvrt (hodinami | hodinama) {subtract:2:hod:15:min}) |
+	(před tři a čtvrt (hodinami | hodinama) {subtract:3:hod:15:min}) |
+	(před čtyři a čtvrt (hodinami | hodinama) {subtract:4:hod:15:min}) |
+	(před hodinu a tři čtvrtě {subtract:1:hod:45:min}) |
+	(před dvě a tři čtvrtě (hodinami | hodinama) {subtract:2:hod:45:min}) |
+	(před tři a tři čtvrtě (hodinami | hodinama) {subtract:3:hod:45:min}) |
+	(před čtyři a tři čtvrtě (hodinami | hodinama) {subtract:4:hod:45:min}) |
+	(před {subtract} $num $hod [a] $num $min) |
+	(za {add} $num $hod [a] $num $min) |
+	(za {add:0:hod} $num $min) |
+	(před {subtract} $num $hod [a] $num $min) |
+	(před {subtract:0:hod} $num $min) |
+	(včera {subtract:1:day}) |
+	(předevčírem {subtract:2:day}) |
+	(před {subtract} $num $day) |
+	((zítra | zejtra) {add:1:day}) |
+	((pozítří | pozejtří) {add:2:day})
+);
+
+$num = (
+	$n0 {0} | 
+	$n1 {1} | 
+	$n2 {2} | 
+	$n3 {3} | 
+	$n4 {4} | 
+	$n5 {5} | 
+	$n6 {6} | 
+	$n7 {7} | 
+	$n8 {8} | 
+	$n9 {9} | 
+	$n10 {10} | 
+	$n11 {11} | 
+	$n12 {12} | 
+	$n13 {13} | 
+	$n14 {14} | 
+	$n15 {15} | 
+	$n16 {16} | 
+	$n17 {17} | 
+	$n18 {18} | 
+	$n19 {19} | 
+	$n20 {20} | 
+	$n20 $n1 {21} | 
+	$n20 $n2 {22} | 
+	$n20 $n3 {23} | 
+	$n20 $n4 {24} | 
+	$n20 $n5 {25} | 
+	$n20 $n6 {26} | 
+	$n20 $n7 {27} | 
+	$n20 $n8 {28} | 
+	$n20 $n9 {29} | 
+	$n30 {30} | 
+	$n30 $n1 {31} | 
+	$n30 $n2 {32} | 
+	$n30 $n3 {33} | 
+	$n30 $n4 {34} | 
+	$n30 $n5 {35} | 
+	$n30 $n6 {36} | 
+	$n30 $n7 {37} | 
+	$n30 $n8 {38} | 
+	$n30 $n9 {39} | 
+	$n40 {40} | 
+	$n40 $n1 {41} | 
+	$n40 $n2 {42} | 
+	$n40 $n3 {43} | 
+	$n40 $n4 {44} | 
+	$n40 $n5 {45} | 
+	$n40 $n6 {46} | 
+	$n40 $n7 {47} | 
+	$n40 $n8 {48} | 
+	$n40 $n9 {49} | 
+	$n50 {50} | 
+	$n50 $n1 {51} | 
+	$n50 $n2 {52} | 
+	$n50 $n3 {53} | 
+	$n50 $n4 {54} | 
+	$n50 $n5 {55} | 
+	$n50 $n6 {56} | 
+	$n50 $n7 {57} | 
+	$n50 $n8 {58} | 
+	$n50 $n9 {59} | 
+	$n60 {60} | 
+);
+
+$n0 = (nulám | nuly | nul | nulo | nulu | nulách | nulou | nule | nulami | nula);
+$n1 = (jedněm | jednou | jednoho | jednom | jedněmi | jedna | jedním | jedny | jedné | jedni | jeden | jednomu | jedno | jedněch | jednu );
+$n2 = (dvouma | dva | dvou | dvěma | dvouch | dvoum | dvě | dvěma ); 
+$n3 = (tři | tří | třech | třem | třemi | třema);
+$n4 = (čtyřma | čtyři | čtyř | čtyřech | čtyřem | čtyřmi);
+$n5 = (pěti | pět);
+$n6 = (šest | šesti);
+$n7 = (sedm | sedmi);
+$n8 = (osm | osmi | osum);
+$n9 = (devět | devíti);
+
+$n10 = (deset | deseti | desátý | desáté | desátou);
+$n11 = (jedenáct | jedenácti | jedenáctý | jedenáctou | jedenácté);
+$n12 = (dvanáct | dvanácti | dvanáctý | dvanáctou | dvanácté);
+$n13 = (třináct | třinácti | třináctý | třináctou | třinácté);
+$n14 = (čtrnáct | čtrnácti | čtrnáctý | čtrnáctou | čtrnácté);
+$n15 = (patnáct | patnácti | patnáctý | patnáctou | patnácté);
+$n16 = (šestnáct | šestnácti | šestnáctý | šestnáctou | šestnácté);
+$n17 = (sedmnáct | sedmnácti | sedmnáctý | sedmnáctou | sedmnácté);
+$n18 = (osmnáct | osmnácti | osmnáctý | osmnáctou | osmnácté);
+$n19 = (devatenáct | devatenácti | devatenáctý | devatenáctou | devatenácté);
+
+$n20 = (dvacet | dvaceti | dvacátý | dvacáté | dvacátou);
+$n30 = (třicet | třiceti | třicátý | třicáté | třicátou);
+$n40 = (čtyřicet | čtyřiceti | čtyřicátý | čtyřicáté | čtyřicátou);
+$n50 = (padesát | padesáti | padesátý | padesáté | padesátou);
+$n60 = (šedesát | šedesáti | šedesátý | šedesáté | šedesátou);
+
+$min = ( ( minuto | minutách | minuty | minutě | minutou | minut | minutu | minutami | minutám | minuta ) {min});
+$hod = ( ( hodinou | hodino | hodinami | hodinama | hodině | hodin | hodinách | hodiny | hodinám | hodina | hodinu ) {hod});
+$day = ( (den, dne, dnech, dnem, dni, dnové, dnu, dny, dní, dnů, dnům) {day});
+$week = ( (týden, týdne, týdnech, týdnem, týdni, týdnu, týdny, týdnů, týdnům) {week});

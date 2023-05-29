@@ -224,9 +224,9 @@ class SpeechCloudWS(websocket.WebSocketHandler, EventEmitter):
     def _check_task_result(self, task):
         try:
             task.result()
-        # except concurrent.futures.CancelledError:
-        except:
+        except concurrent.futures.CancelledError:
             gen_log.info('Dialog manager was canceled')
+        except:
             self.log_dialog_exception(sys.exc_info())
         finally:
             self.close()
@@ -273,8 +273,8 @@ class SpeechCloudWS(websocket.WebSocketHandler, EventEmitter):
             def handler(**kwargs):
                 try:
                     return future.set_result(kwargs)
-                # except asyncio.base_futures.InvalidStateError: # this line borked
-                except:
+                except asyncio.base_futures.InvalidStateError: # this line borked
+                # except:
                     # Event was canceled
                     pass
 

@@ -1,0 +1,20 @@
+#ABNF 1.0 UTF-8 cs;
+grammar commands;
+root $commands;
+
+public $commands = ($MEANING_help | $MEANING_quit);
+
+$MEANING_help = ( ( $WORD_asistence | $WORD_pomoc | $WORD_podpora | $WORD_nápověda ) {help} );
+$MEANING_quit = ( ( $WORD_skončit | $WORD_ukončení | $WORD_naschledanou | $WORD_konec | $WORD_nashledanou | $WORD_ukončit ) {quit} );
+
+$WORD_podpora = ( ( podporám | podporami | podpoře | podpory | podporu | podporou | podporách | podpor | podporo | podpora )  );
+$WORD_pomoc = ( ( pomocemi | pomoc | pomoci | pomocí | pomocem | pomocím | pomocech | pomocích )  );
+$WORD_skončit = ( ( skončete | skončeme | skončil | skončeni | skončíš | skončíte | skončili | skonči | skončeno | skončím | skončilo | skončily | skončen | skončena | skončí | skončila | skončivši | skončit | skončiv | skončíme | skončeny | skončivše )  );
+$WORD_ukončení = ( ( ukončeních | ukončeními | ukončení | ukončením )  );
+$WORD_nashledanou = ( ( nashledanou )  );
+$WORD_nápověda = ( ( nápověda )  );
+$WORD_asistence = ( ( asistence | asistencemi | asistenci | asistencí | asistencím | asistencích )  );
+$WORD_ukončit = ( ( ukončiv | ukončili | ukončeme | ukončete | ukonči | ukončena | ukončeny | ukončím | ukončí | ukončily | ukončivše | ukončen | ukončíme | ukončeno | ukončit | ukončeni | ukončilo | ukončíš | ukončil | ukončivši | ukončíte | ukončila )  );
+$WORD_naschledanou = ( ( naschledanou )  );
+$WORD_konec = ( ( konců | konci | koncům | koncích | koncem | konec | konce )  );
+

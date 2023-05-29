@@ -1,0 +1,37 @@
+#ABNF 1.0 UTF-8 cs;
+grammar questions;
+root $questions;
+
+public $questions = (
+	$QUESTION_capacity | 
+	$QUESTION_how_many | 
+	$QUESTION_exist | 
+	$QUESTION_at_least | 
+	$QUESTION_where
+);
+
+$QUESTION_capacity = ((
+	[jaká je] kapacita | 
+) {QUESTION_capacity} );
+
+$QUESTION_how_many = ((
+	kolik |
+	jak (moc|hodně|mnoho)
+) {QUESTION_how_many});
+
+$QUESTION_exist = ((
+	jsou $GARBAGE nějak(á|ý) | 
+	jsou volná |
+	(dá se | lze | můžu | jde) zaparkovat
+) {QUESTION_exist} );
+
+$QUESTION_at_least = ((
+	a[le]spoň | 
+	minimálně |
+	víc[e] než
+) {QUESTION_at_least});
+
+$QUESTION_where = ((
+	kde | 
+	ve kterém ([parkovacím] domě | parkovišti)
+) {QUESTION_where});
