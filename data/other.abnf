@@ -3,9 +3,9 @@ grammar other;
 root $other;
 
 public $other = (
-$MEANING_spot_state | 
-$MEANING_nove_divadlo | 
-$MEANING_rychtarka
+	$MEANING_spot_state | 
+	$MEANING_nove_divadlo | 
+	$MEANING_rychtarka
 );
 
 $MEANING_spot_state = (
@@ -19,14 +19,30 @@ $MEANING_nove_divadlo = ((
 	novému divadlu |
 	novém divadlu |
 	novém divadle |
-	novým divadlem
+	novým divadlem |
+	Nové_divadlo |
+	Nového_divadla |
+	Novému_divadlu |
+	Novém_divadlu |
+	Novém_divadle |
+	Novým_divadlem|
+	Nové divadlo |
+	Nového divadla |
+	Novému divadlu |
+	Novém divadlu |
+	Novém divadle |
+	Novým divadlem
 ) {Nové Divadlo});
 
 $MEANING_rychtarka = ((
 	rychtářka | 
 	rychtářky | 
 	rychtářce | 
-	rychtářkou
+	rychtářkou|
+	Rychtářka | 
+	Rychtářky | 
+	Rychtářce | 
+	Rychtářkou
 ) {Rychtářka} );
 
 $MEANING_available = ( ( $WORD_dostupný | $WORD_prázdný | $WORD_volný )  );

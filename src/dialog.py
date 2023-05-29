@@ -273,8 +273,8 @@ class SpeechCloudWS(websocket.WebSocketHandler, EventEmitter):
             def handler(**kwargs):
                 try:
                     return future.set_result(kwargs)
-                except asyncio.base_futures.InvalidStateError: # this line borked
-                # except:
+                # except asyncio.base_futures.InvalidStateError: # this line borked
+                except:
                     # Event was canceled
                     pass
 

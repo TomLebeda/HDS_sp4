@@ -6,8 +6,6 @@ public $questions = (
 	$QUESTION_capacity | 
 	$QUESTION_how_many | 
 	$QUESTION_exist | 
-	$QUESTION_at_least | 
-	$QUESTION_where
 );
 
 $QUESTION_capacity = ((
@@ -20,18 +18,44 @@ $QUESTION_how_many = ((
 ) {QUESTION_how_many});
 
 $QUESTION_exist = ((
-	jsou $GARBAGE nějak(á|ý) | 
-	jsou volná |
+	(nějaká | nějaký) |
 	(dá se | lze | můžu | jde) zaparkovat
 ) {QUESTION_exist} );
 
-$QUESTION_at_least = ((
-	a[le]spoň | 
-	minimálně |
-	víc[e] než
-) {QUESTION_at_least});
+$divadlo = (
+	nové divadlo |
+	nového divadla |
+	novému divadlu |
+	novém divadlu |
+	novém divadle |
+	novým divadlem|
+	Nové_divadlo |
+	Nového_divadla |
+	Novému_divadlu |
+	Novém_divadlu |
+	Novém_divadle |
+	Novým_divadlem|
+	Nové divadlo |
+	Nového divadla |
+	Novému divadlu |
+	Novém divadlu |
+	Novém divadle |
+	Novým divadlem
+);
 
-$QUESTION_where = ((
-	kde | 
-	ve kterém ([parkovacím] domě | parkovišti)
-) {QUESTION_where});
+$rychtarka = (
+	rychtářka | 
+	rychtářky | 
+	rychtářce | 
+	rychtářkou
+);
+
+$MEANING_available = ( ( $WORD_dostupný | $WORD_prázdný | $WORD_volný )  );
+$MEANING_not_available = ( ( $WORD_obsazený | $WORD_plný | $WORD_zabraný )  );
+
+$WORD_obsazený = ( ( obsazenou | obsazeného | obsazenému | obsazenými | obsazené | obsazená | obsazených | obsazený | obsazení | obsazeným | obsazeném )  );
+$WORD_plný = ( ( plnou | plnější | plni | plna | plnému | plnu | plný | plny | plnými | plní | plném | plného | plná | plným | plných | plno | nejplnější | pln | plné )  );
+$WORD_zabraný = ( ( zabraný )  );
+$WORD_prázdný = ( ( prázdných | prázdné | prázdném | nejprázdnější | prázdného | prázdní | prázdná | prázdným | prázdný | prázdnou | prázdnější | prázdnému | prázdnými )  );
+$WORD_volný = ( ( volných | volného | volným | nejvolnější | volném | volný | volní | volnější | volnou | volnými | volná | volné | volnému )  );
+$WORD_dostupný = ( ( dostupná | dostupní | dostupnými | dostupných | dostupnému | dostupnou | dostupném | dostupného | dostupnější | dostupný | dostupným | nejdostupnější | dostupné )  );
